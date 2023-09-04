@@ -17,7 +17,7 @@ class PostTableViewCell: UITableViewCell {
     
     func setPostData(_ postData: PostData) {
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        let imageRef = Storage.storage().reference().child(Const.PostPath).child(postData.id + ".jpg")
+        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
         postImageView.sd_setImage(with: imageRef)
         
         self.captionLabel.text = "\(postData.name) : \(postData.caption)"
