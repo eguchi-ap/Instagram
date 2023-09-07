@@ -9,11 +9,14 @@ import UIKit
 import FirebaseStorageUI
 
 class PostTableViewCell: UITableViewCell {
+
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentButton: UIButton!
     
     func setPostData(_ postData: PostData) {
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
@@ -32,6 +35,17 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        var coment: String = ""
+        for (key, value) in postData.comments {
+            coment += "\(key): \(value), "
+        }
+        if !coment.isEmpty {
+            coment.removeLast(2)
+        }
+        
+        commentLabel.text = coment
+        
     }
     
     override func awakeFromNib() {
@@ -41,8 +55,6 @@ class PostTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

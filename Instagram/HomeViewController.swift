@@ -69,6 +69,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.setPostData(postArray[indexPath.row])
         
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        cell.commentButton.addTarget(self, action:#selector(handleCommentButtonButton(_: forEvent: )), for: .touchUpInside)
 
         return cell
     }
@@ -94,5 +95,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
             postRef.updateData(["likes": updateValue])
         }
+    }
+    
+    @objc func handleCommentButtonButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: コメントボタンがタップされました")
+        let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment")
+        self.present(commentViewController!, animated: true, completion: nil)
     }
 }

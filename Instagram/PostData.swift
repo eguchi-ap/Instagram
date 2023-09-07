@@ -9,6 +9,7 @@ class PostData: NSObject {
     var date = ""
     var likes: [String] = []
     var isLiked: Bool = false
+    var comments: [String: String] = [:]
 
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
@@ -32,6 +33,10 @@ class PostData: NSObject {
         if let likes = postDic["likes"] as? [String] {
             self.likes = likes
         }
+        
+        if let comments = postDic["comments"] as? [String: String] {
+            self.comments = comments
+        }
 
         if let myid = Auth.auth().currentUser?.uid {
             // likesの配列の中にmyidが含まれているかチェックすることで、自分がいいねを押しているかを判断
@@ -43,6 +48,6 @@ class PostData: NSObject {
     }
 
     override var description: String {
-        return "PostData: name=\(name); caption=\(caption); date=\(date); likes=\(likes.count); id=\(id);"
+        return "PostData: name=\(name); caption=\(caption); date=\(date); likes=\(likes.count); comments=\(comments.count); id=\(id);"
     }
 }

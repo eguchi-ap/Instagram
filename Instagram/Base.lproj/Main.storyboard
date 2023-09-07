@@ -323,6 +323,48 @@
             </objects>
             <point key="canvasLocation" x="-1364.1221374045801" y="-711.26760563380287"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="P1a-UH-H2f">
+            <objects>
+                <viewController storyboardIdentifier="Comment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ov0-mu-Z51" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rOv-05-gN0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメント" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buY-Kx-DJD">
+                                <rect key="frame" x="46.666666666666657" y="139" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="vsX-6B-TSZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQA-ao-oiv">
+                                <rect key="frame" x="46.666666666666657" y="183" width="300" height="40"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="コメントを入力" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="tapSendButton:" destination="Ov0-mu-Z51" eventType="touchUpInside" id="hDp-3r-FWc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gWy-kV-e58"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="buY-Kx-DJD" firstAttribute="top" secondItem="gWy-kV-e58" secondAttribute="top" constant="80" id="YnA-oS-pzb"/>
+                            <constraint firstItem="kQA-ao-oiv" firstAttribute="centerX" secondItem="rOv-05-gN0" secondAttribute="centerX" id="g3F-F4-1HU"/>
+                            <constraint firstItem="buY-Kx-DJD" firstAttribute="centerX" secondItem="rOv-05-gN0" secondAttribute="centerX" id="tCz-Ut-sdP"/>
+                            <constraint firstItem="kQA-ao-oiv" firstAttribute="top" secondItem="buY-Kx-DJD" secondAttribute="bottom" constant="10" id="xAE-Cl-eLc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="comment" destination="buY-Kx-DJD" id="jaM-UC-NfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TnI-M0-tR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="-47"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
