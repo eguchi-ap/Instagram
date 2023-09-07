@@ -99,7 +99,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @objc func handleCommentButtonButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: コメントボタンがタップされました")
-        let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment")
-        self.present(commentViewController!, animated: true, completion: nil)
+        let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        let postData = postArray[indexPath!.row]
+        
+        commentViewController.postData = postData
+        self.present(commentViewController, animated: true, completion: nil)
     }
 }

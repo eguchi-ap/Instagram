@@ -344,7 +344,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="コメントを入力" backgroundImage="btn"/>
                                 <connections>
-                                    <action selector="tapSendButton:" destination="Ov0-mu-Z51" eventType="touchUpInside" id="hDp-3r-FWc"/>
+                                    <action selector="tapSendButton:" destination="Ov0-mu-Z51" eventType="touchUpInside" id="bE7-UH-Uze"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -358,7 +358,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="comment" destination="buY-Kx-DJD" id="jaM-UC-NfH"/>
+                        <outlet property="comment" destination="buY-Kx-DJD" id="hXG-58-cmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TnI-M0-tR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

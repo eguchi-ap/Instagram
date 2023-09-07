@@ -24,15 +24,13 @@ class CommentViewController: UIViewController {
     @IBAction func tapSendButton(_ sender: Any) {
         if let postData = self.postData,
         let myid = Auth.auth().currentUser?.uid {
-            var updateValue: FieldValue
-            if postData.isLiked {
-                updateValue = FieldValue.arrayRemove([myid])
-            } else {
-                updateValue = FieldValue.arrayUnion([myid])
-            }
+            let saveComment = comment.text ?? ""
+            let commentData = [myid : saveComment]
             
+            var updateValue: FieldValue
+            updateValue = FieldValue.arrayUnion([commentData])
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-            postRef.updateData(["comment": updateValue])
+            postRef.updateData(["comments": updateValue])
         }
     }
 }
