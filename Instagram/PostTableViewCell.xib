@@ -102,7 +102,7 @@
                 <outlet property="likeLabel" destination="sqm-MP-SMt" id="eb3-A9-jkI"/>
                 <outlet property="postImageView" destination="cn8-zM-ohA" id="Uax-QJ-2Si"/>
             </connections>
-            <point key="canvasLocation" x="152.67175572519082" y="193.3098591549296"/>
+            <point key="canvasLocation" x="151.875" y="192.78169014084509"/>
         </tableViewCell>
     </objects>
     <resources>

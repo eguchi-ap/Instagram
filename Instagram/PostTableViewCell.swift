@@ -36,16 +36,16 @@ class PostTableViewCell: UITableViewCell {
             self.likeButton.setImage(buttonImage, for: .normal)
         }
         
-        var coment: String = ""
-        for (key, value) in postData.comments {
-            coment += "\(key): \(value), "
+        var comemnt: String = ""
+        for dict in postData.comments {
+            for (key, value) in dict {
+                comemnt += "\(key): \(value), "
+            }
         }
-        if !coment.isEmpty {
-            coment.removeLast(2)
+        if !comemnt.isEmpty {
+            comemnt.removeLast(2)
         }
-        
-        commentLabel.text = coment
-        
+        commentLabel.text = comemnt
     }
     
     override func awakeFromNib() {
